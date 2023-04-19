@@ -30,7 +30,7 @@ export default function CreatePost() {
 
     const sendPost = async () => {
 
-        if (!isSending) {
+        if (isSending) {
             setIsSending(true)
             toast.error('please wait')
             return
