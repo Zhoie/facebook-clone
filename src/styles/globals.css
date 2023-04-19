@@ -9,3 +9,9 @@
   @apply transition; // Transition
   @apply hover:scale-105; // Interaction
 } */
+
+* {
+  font-family: 'Golos Text', sans-serif;
+  font-family: 'Jost', sans-serif;
+  font-family: 'Tilt Warp', cursive;
+}

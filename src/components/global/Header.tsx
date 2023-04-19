@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 // import { GrFacebook } from 'react-icons/gr'
 import { SiDatadog } from 'react-icons/si'
 import { AiFillHome, AiOutlineHome, AiFillPlayCircle, AiOutlinePlayCircle, AiFillMessage, AiOutlineMessage, AiFillBell, AiOutlineBell } from 'react-icons/ai'
@@ -6,6 +7,9 @@ import { HiFlag, HiOutlineFlag, HiUserGroup, HiOutlineUserGroup } from 'react-ic
 import { IoCartSharp, IoCartOutline, IoSearchSharp, IoSearchOutline } from 'react-icons/io5'
 import { FcGoogle } from 'react-icons/fc'
 import { GrAppsRounded } from 'react-icons/gr'
+
+
+import { useSession, signIn, signOut } from 'next-auth/react'
 import LoginBtn from '../LoginBtn'
 
 
@@ -26,6 +30,12 @@ const styles = {
 
 export default function Header() {
 
+  const { data: session } = useSession()
+
+  console.log('Header.tsx')
+  console.log(session)
+
+
   const [home, setHome] = React.useState(false)
 
   // Click  Buttons
@@ -37,7 +47,9 @@ export default function Header() {
     <div className={`${styles.container.base}${styles.container.adapt}`}>
       {/* LeftSide */}
       <div className={styles.dogIcon}>
-        <SiDatadog size={styles.dogIconSize} />
+
+        {session?.user?.image ? <Image className={styles.btn} src={session?.user?.image} width={styles.dogIconSize} height={styles.dogIconSize} alt='user'/> : <SiDatadog size={styles.dogIconSize} />}
+         {/* <SiDatadog size={styles.dogIconSize} /> */}
       </div>
       <input className={styles.searchInput} type="text" placeholder="Search Docebook" />
       {/* MiddleSide */}
@@ -71,7 +83,7 @@ export default function Header() {
           <AiOutlineMessage size={styles.btnSize} />
         </div> */}
         {/* <div className={styles.btn}> */}
-          <LoginBtn />
+        <LoginBtn />
         {/* </div> */}
         {/* <LoginBtn /> */}
       </div>

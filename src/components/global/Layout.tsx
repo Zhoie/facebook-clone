@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 const styles = {
-    container: 'min-h-screen mx-auto bg-zinc-200',
+    container: 'min-h-screen mx-auto bg-gray-700',
     header: 'fixed top-0 left-0 right-0 z-50 duration-500',
     headerHidden: '-translate-y-full duration-500',
     feed: '',
