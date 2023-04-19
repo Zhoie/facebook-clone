@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .button {
+  @apply inline-flex items-center; // Layout
+  @apply px-5 py-3 text-sm; // Spacing/Sizing
+  @apply rounded border; // Style
+  @apply transition; // Transition
+  @apply hover:scale-105; // Interaction
+} */
