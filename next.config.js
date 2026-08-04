@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['links.papareact.com','lh3.googleusercontent.com'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'links.papareact.com' },
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+    ],
   }
 }
 
