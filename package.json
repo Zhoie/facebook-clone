@@ -29,5 +29,8 @@
   "devDependencies": {
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7"
+  },
+  "engines": {
+    "node": ">=22.23.4 <23"
   }
 }
